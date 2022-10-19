@@ -6,6 +6,7 @@ const colors = require('colors')
 const listEndpoint = require('express-list-endpoints')
 //los componentes de ruta
 const  bootcampRoutes = require('./routes/BootcapmRoutes')
+const  courseRoutes = require('./routes/courseRoutes')
 
 //3.ESTABLECER ARCHIVO DE CONFIGURACION
 dotenv.config({
@@ -20,6 +21,7 @@ const app =  express()
 
 //rutas de proyecto
 app.use('/api/v1/bootcamps', bootcampRoutes)
+app.use('/api/v1/courses', courseRoutes)
 
 //endpoint de aplicacion
 app.get('/', (request , response ) => {

@@ -5,26 +5,40 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     
     await queryInterface.bulkInsert('bootcamps', [{
-      usernam: 'Daniela Baena',
-      email: 'jdbaena00@misena.edu.co'
-     }], {});
-  
- },
+                          name: 'PHP',
+                          description: 'bootcamp for php learning',
+                          phone: '(57) 551625',
+                          average_cost:4500,
+                          average_rating:3,
+                          user_id: 1
+                                 },
 
- async down (queryInterface, Sequelize) {
-   
-    await queryInterface.bulkDelete('bootcamps' [{
-                          username: 'Daniela Baena',
-                          email: 'jdbaena00@misena.edu.co',
-                          password: '45451'
-                    },
-                {
-                           username: 'Jorge Lopez',
-                           email: 'jorgelopez@misena.edu.co',
-                           password: '45451'
-                }
-   
-   ], {});
+                                 {
+                          name: 'express Backed',
+                          description: 'bootcamp for jevascript learning',
+                          phone: '(57) 5686842',
+                          average_cost:4500,
+                          average_rating:2,
+                          user_id: 1
+                                },
+                               {
+                               name: 'CSS bootcamp',
+                               description: 'bootcamp for CSS learning',
+                               phone: '(57) 254545475',
+                              average_cost:4500,
+                              average_rating:3,
+                               user_id: 1
+                               }
+                                
+    
+], {});
+
+   },
+                                      
+
+   async down (queryInterface, Sequelize) {
+    
+    await queryInterface.bulkDelete('bootcamps', null, {});
     
  }
 };

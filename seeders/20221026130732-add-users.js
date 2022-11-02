@@ -6,25 +6,15 @@ module.exports = {
     
      await queryInterface.bulkInsert('users', [{
        username: 'Daniela Baena',
-       email: 'jdbaena00@misena.edu.co'
+       email: 'jdbaena00@misena.edu.co',
+       password:'155258'
       }], {});
    
   },
 
   async down (queryInterface, Sequelize) {
     
-     await queryInterface.bulkDelete('users' [{
-                           username: 'Daniela Baena',
-                           email: 'jdbaena00@misena.edu.co',
-                           password: '45451'
-                     },
-                 {
-                            username: 'Jorge Lopez',
-                            email: 'jorgelopez@misena.edu.co',
-                            password: '45451'
-                 }
-    
-    ], {});
+     await queryInterface.bulkDelete('users', null, {});
      
   }
 };
